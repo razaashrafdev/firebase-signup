@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <div class="top-bar">
+    <button class="logout-btn" id="logoutBtn"><a href="../../index.html">Logout</a></button>
+    <h1 class="crystal">Dashboard</h1>
+    <button class="add-product-btn" id="addProductBtn">Add Product</button>
+  </div>
+
+  <!-- Custom Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <form id="productForm">
+        <div class="modal-header">
+          <h5 id="modalTitle">Add Product</h5>
+          <button type="button" class="close-btn" id="closeModalBtn">×</button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="editingIndex">
+          <div class="form-group">
+            <label for="productImage">Image URL</label>
+            <input type="url" id="productImage" required>
+          </div>
+          <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" required>
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Product Price</label>
+            <input type="number" id="productPrice" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="save-btn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container fade-in">
+    <div class="product-grid" id="productList"></div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>
